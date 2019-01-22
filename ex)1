@@ -1,0 +1,45 @@
+from sklearn import preprocessing
+import numpy as np
+X_train = np.array([[ 1., -1.,  2.],
+                    [2., 0., 0.],
+                    [0., 1., -1.]])
+
+X_scaled = preprocessing.scale(X_train)
+x_scaled
+
+X_scaled.mean(axis=0)
+X_scaled.std(axis=0)
+
+scaler = preprocessing.StandardScaler().fit(X_train)
+scaler
+StandardScaler(copy=True, with_mean=True, with_std=True)
+
+scaler.mean_
+
+scaler.scale_
+
+scaler.transform(X_train)
+
+X_test = [[-1., 1., 0.]]
+scaler.transform(X_test)
+
+X_train = np.array([[ 1., -1.,  2.],[ 2.,  0.,  0.],[ 0.,  1., -1.]])
+min_max_scaler = preprocessing.MinMaxScaler()
+X_train_minmax = min_max_scaler.fit_transform(X_train)
+X_train_minmax
+
+X_test = np.array([[-3., -1.,  4.]])
+X_test_minmax = min_max_scaler.transform(X_test)
+X_test_minmax
+
+min_max_scaler.scale_
+min_max_scaler.min_
+
+X_train = np.array([[ 1., -1.,  2.],[ 2.,  0.,  0.],[ 0.,  1., -1.]])
+max_abs_scaler = preprocessing.MaxAbsScaler()
+X_train_maxabs = max_abs_scaler.fit_transform(X_train)
+X_train_maxabs
+X_test = np.array([[ -3., -1.,  4.]])
+X_test_maxabs = max_abs_scaler.transform(X_test)
+X_test_maxabs
+max_abs_scaler.scale_

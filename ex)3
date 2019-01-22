@@ -4,7 +4,7 @@ def CE_FNN(wv, M, K, x, t):
     y, a, z, b = FNN(wv, M, K, x)
     ce = -np.dot(np.log(y.reshape(-1)), t.reshape(-1)) / N
     return ce
-
+  
 
 # test ---
 WV = np.ones(15)

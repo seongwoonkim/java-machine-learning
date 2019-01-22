@@ -1,0 +1,15 @@
+# 평균 교차 엔트로피 오차 
+def CE_FNN(wv, M, K, x, t):
+    N, D = x.shape
+    y, a, z, b = FNN(wv, M, K, x)
+    ce = -np.dot(np.log(y.reshape(-1)), t.reshape(-1)) / N
+    return ce
+
+
+# test ---
+WV = np.ones(15)
+M = 2
+K = 3
+CE_FNN(WV, M, K, X_train[:2, :], T_train[:2, :])
+
+#출처 : http://www.hanbit.co.kr/support/supplement_list.html?keyword=%ED%8C%8C%EC%9D%B4%EC%8D%AC
